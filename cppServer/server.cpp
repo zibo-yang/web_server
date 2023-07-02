@@ -27,6 +27,11 @@ int main() {
 
     printf("welcome to c++ web server");
     //tester(test);
+
+    /*
+    * in cpp, it's wholesome to prepare a complete socket. it comprises INITIALIZATION|BINDING WITH SPECIAL ADDRESS|LISTENING TEST
+    where too much data need to be declared.
+    */
     
     int server, client;
     
@@ -53,6 +58,11 @@ int main() {
         if (client = accept(server, (struct sockaddr*)&claddr, (socklen_t*)(&claddr)) < 0){error_out("fail to connect from client");}
         //tester(test);
 
+        
+        /**
+         * However, in cpp data preparation is much straightforward with no need for extra buffer to retrieve and process data from sockets.
+         * recv() and send() did lost of "dirty works" behind. 
+         * **/
         char revdata[1024] = "";
         recv(client, revdata, 1024, 0);
         printf("%s: %ld data has been received\n", revdata, strlen(revdata));

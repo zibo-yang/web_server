@@ -1,4 +1,6 @@
 import socket
+
+# in python, the socket style shares similarity with cpp but cleaner with no extra useless declaration.
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(("localhost", 8080))
 server.listen(5)
